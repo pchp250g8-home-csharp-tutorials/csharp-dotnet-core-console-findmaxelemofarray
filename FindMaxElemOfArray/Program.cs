@@ -1,0 +1,23 @@
+﻿// See https://aka.ms/new-console-template for more information
+var oRnd = new Random();
+Console.WriteLine("Input a count of elements:");
+int.TryParse(Console.ReadLine(), out var nElems);
+Console.WriteLine($"Generating array by filling {nElems}:");
+int[] iNumbers = new int[nElems];
+for (int i = 0; i < nElems; i++)
+{
+    iNumbers[i] = oRnd.Next(1, 100);
+    Console.Write(iNumbers[i]+" ");
+}
+var iMax = iNumbers[0];
+var nIndex = 0;
+for (int i = 1; i < nElems; i++)
+{
+    if (iNumbers[i] > iMax)
+    {
+        iMax = iNumbers[i];
+        nIndex = i;
+    }
+}
+Console.WriteLine($"\r\nFound maximum element:{iMax} with index {nIndex}");
+Console.Read();
