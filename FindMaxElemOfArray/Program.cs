@@ -2,6 +2,12 @@
 var oRnd = new Random();
 Console.WriteLine("Input a count of elements:");
 int.TryParse(Console.ReadLine(), out var nElems);
+if (nElems == 0)
+{
+    Console.WriteLine("Empty arrays not allowed");
+    Console.Read();
+    return;
+}
 Console.WriteLine($"Generating array by filling {nElems}:");
 int[] iNumbers = new int[nElems];
 for (int i = 0; i < nElems; i++)
